@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+    - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: s3
+  access_key_id: AKIA42TFTVVMZPOY7S4I
+  secret_access_key: 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
+  bucket: test-deploiement-react
+  local_dir: build
+  acl: public_read
